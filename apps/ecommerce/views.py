@@ -23,7 +23,7 @@ class CompraViewSet(viewsets.ModelViewSet):
     serializer_class = CompraSerializer
     
 
-class CompraClienteList(generics.APIView):
+class CompraClienteList(generics.ListAPIView):
     def get_queryset(self):
         queryset = Compra.objects.filter(cliente_id=self.kwargs['pk'])
         return queryset
